@@ -24,10 +24,10 @@ mkvtoolnix:24.0.0<br/>
 2.本系统不会提供lentffmpeg，如果需要，请与视骏相关人员联系。<br/>
 
 # docker启动集群
-#创建网络
-docker network create --driver=overlay --attachable hadoop
-#启动各节点
-docker run -dit -p 8042:8042 -p 8088:8088 --hostname=master -p 8054:8054 --name=master --network=hadoop transcoder:latest
-docker run -dit -p 8043:8042 --hostname=slave1 --name=slave1 --network=hadoop transcoder:latest
-docker run -dit -p 8044:8042 --hostname=slave2 --name=slave2 --network=hadoop transcoder:latest
-docker run -dit -p 8045:8042 --hostname=slave3 --name=slave3 --network=hadoop transcoder:latest
+#创建网络<br/>
+docker network create --driver=overlay --attachable hadoop<br/>
+#启动各节点<br/>
+docker run -dit -p 8042:8042 -p 8088:8088 --hostname=master -p 8054:8054 --name=master --network=hadoop transcoder:latest<br/>
+docker run -dit -p 8043:8042 --hostname=slave1 --name=slave1 --network=hadoop transcoder:latest<br/>
+docker run -dit -p 8044:8042 --hostname=slave2 --name=slave2 --network=hadoop transcoder:latest<br/>
+docker run -dit -p 8045:8042 --hostname=slave3 --name=slave3 --network=hadoop transcoder:latest<br/>
