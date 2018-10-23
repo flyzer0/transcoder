@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- description -->
+<!-- description -->
+
+<parameters>
+    <video_bitrate>15000k</video_bitrate>
+    <description>平均编码码率</description>
+
+    <video_maxrate>30000k</video_maxrate>
+    <description>最高编码码率</description>
+
+    <video_bufsize>30000k</video_bufsize>
+    <description>编码缓冲区大小（当设置最高编码码率时必须设置编码缓冲区大小的值，一般取和最高编码码率相同的值）</description>
+
+    <video_size>3840*2160</video_size>
+    <description>视频的分辨率（一般取4096*2160或3840*2160或1920*1080）</description>
+
+    <video_frame_rate>25</video_frame_rate>
+    <description>视频的帧率（一般取25或30）</description>
+
+    <video_gop>50</video_gop>
+    <description>视频的GOP值（一般取30或60，缺省时默认为250，当视频编码器取libx265或hevc时，因为ffmpeg的bug该参数不起作用，需要在video_x265_params参数中添加keyint=??来设置GOP值）</description>
+
+    <video_chroma_format>yuv420p</video_chroma_format>
+    <description>视频的色彩格式（一般取yuv420p/yuv422p/yuv444p）</description>
+
+    <video_aspect_ratio>16:9</video_aspect_ratio>
+    <description>视频的宽高比</description>
+
+    <video_codec>libx265</video_codec>
+    <description>视频编码器（libx264/libx265/hevc,其中hevc与libx265等价）</description>
+
+    <video_x264_params></video_x264_params>
+    <description>视频编码器参数（当video_codec设置为libx264时才可能需要设置此参数，当video_codec不为libx264时留空）</description>
+
+    <video_x265_params>bframe=3:keyint=50</video_x265_params>
+    <description>视频编码器参数（当video_codec设置为libx265时才可能需要设置此参数，当video_codec不为libx265时留空）</description>
+
+    <video_out_format>ts</video_out_format>
+    <description>转码后视频文件的封装格式</description>
+
+    <audio_codec>ac3</audio_codec>
+    <description>音频格式</description>
+
+    <audio_samplerate>48k</audio_samplerate>
+    <description>音频采样速率</description>
+
+    <audio_bitrate>256k</audio_bitrate>
+    <description>音频编码码率</description>
+
+    <audio_dts_enabled>no</audio_dts_enabled>
+    <description>是否支持DTS音效：yes-支持，no-不支持</description>
+
+    <split_size>70m</split_size>
+    <description>云转码时视频文件分割的大小（可以按照文件大小分割也可按照时间长度风格，当按大小分割时建议不小于100m，当按时间分割时建议不小于30秒）</description>
+
+    <output_filename>{original_filename}-{UUID}</output_filename>
+    <description>转码后视频文件的命名方式，{original_filename}-{UUID}表示将转码后文件的命名为原文件名后加横杠和UUID值。{original_filename}-xyz表示将转码后的文件命名为原文件名后加“-xyz”</description>
+</parameters>
