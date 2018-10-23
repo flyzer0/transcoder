@@ -21,7 +21,7 @@ mkvtoolnix:24.0.0<br/>
 
 #注意<br/>
 1.在用Dockerfile生成镜像的时候，可能会遇到mkvtoolnix安装失败的问题，请在mkvtoolnix官网上查看源是否更改。<br/>
-2.本系统不会提供lentffmpeg，如果需要，请与视骏相关人员联系。<br/>
+2.本系统不会提供lentffmpeg，如果需要，请与视骏相关人员联系。如使用ffmpeg，则需在Dockerfile及项目代码中修改ffmpeg部分<br/>
 
 # docker启动集群
 #创建网络<br/>
